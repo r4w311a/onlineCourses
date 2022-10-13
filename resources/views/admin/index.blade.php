@@ -29,7 +29,7 @@
                                             <tr class="text-center align-middle">
                                                 <td class="align-middle">{{ $i++ }}</td>
                                                 <td class="align-middle">{{ $order->User->name }}</td>
-                                                <td class="align-middle">{{ $order->Course->course_name }}</td>
+                                                <td class="align-middle"></td>
                                                 <td class="align-middle">{{ $order->created_at }}</td>
                                             </tr>
                                             
