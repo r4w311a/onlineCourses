@@ -28,12 +28,24 @@
                     @error('password')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
+                    <label class="mt-3" for="course_id">Choose Course</label>
+                    <select required id="course_id" name="course_id" class="form-control"
+                        aria-label=".form-select-lg example">
+                        @foreach ($orders as $order)
+                            <option selected disabled value="{{ $order->course_id }}">
+                                {{ $order['Course']['course_name'] }}</option>
+                        @endforeach
+                    </select>
                     <input type="hidden" name="id" value="{{ $user->id }}"></input>
                 </div>
-
+                
                 <button type="submit" class="btn btn-primary mr-2">Update</button>
-
             </form>
+            <form class="forms-sample mt-2" method="POST" action="{{ route('revoke', $user->id) }}">
+                @csrf
+                <button type="submit" class="btn btn-danger mr-2">Revoke Access</button>
+
+            </form> 
         </div>
     </div>
     </div>

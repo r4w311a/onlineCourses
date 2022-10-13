@@ -19,8 +19,8 @@ class UserController extends Controller
     }
     public function addUser()
     {
-        $users = User::all();
         $courses = Course::all();
+        $users = User::all();
         return view('admin.pages.users.add', compact('users', 'courses'));
     }
     public function store(Request $request)
@@ -44,7 +44,7 @@ class UserController extends Controller
         $order->course_id = $request->course_id;
         $order->save();
 
-        
+
         $lessons = Lesson::where('course_id', $request->course_id)->get();
         foreach ($lessons as $lesson) {
             OrderItem::insert([
@@ -53,7 +53,7 @@ class UserController extends Controller
                 'created_at' => Carbon::now(),
             ]);
         }
-        
+
 
         return redirect()->route('view-users')->with('success', 'User Added Successfully');
     }
@@ -61,13 +61,15 @@ class UserController extends Controller
     public function editUser($id)
     {
         $user = User::find($id);
-        return view('admin.pages.users.edit', compact('user'));
+        $orders = Order::where('user_id', $id)->get();
+
+        return view('admin.pages.users.edit', compact('user', 'orders'));
     }
     public function updateUser(Request $request)
     {
 
         $id = $request->id;
-       
+
 
         $user = User::find($id);
         $user->name = $request->name;
@@ -83,6 +85,11 @@ class UserController extends Controller
     {
         $deletedUsers = User::find($id)->delete();
         return Redirect()->route('view-users')->with('success', 'User moved to trash successfully');
-    
+    }
+    public function revoke($id){
+        $user = User::find($id);
+        $user->user_agent = null;
+        $user->save();
+        return redirect()->route('view-users');
     }
 }

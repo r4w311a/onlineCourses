@@ -30,7 +30,7 @@
                   
                     
                     <label class="mt-3" for="chapter_num">Chapter Number </label>
-                    <input type="text" class="form-control" name="chapter_num" id="chapter_num" required
+                    <input type="number" class="form-control" name="chapter_num" id="chapter_num" required
                         placeholder="chapter number">
                     @error('chapter_num')
                         <span class="text-danger">{{ $message }}</span>
