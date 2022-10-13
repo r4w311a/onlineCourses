@@ -50,5 +50,10 @@ class CourseController extends Controller
             'updated_at' => Carbon::now(),
         ]);
         return Redirect('/admin/courses/')->with('success', 'Course updated successfully');
-    }    
+    }   
+    public function deleteCourse($id)
+    {
+        Course::find($id)->delete();
+        return Redirect('/admin/courses/')->with('success', 'Course deleted successfully');
+    }
 }

@@ -37,7 +37,7 @@
                                                 <td class="align-middle">
                                                     <a href="{{ route('edit-course', $course->id) }}"
                                                         class="btn btn-sm btn-info">Edit</a>
-                                                    <a href="" class="btn btn-sm btn-danger">Delete</a>
+                                                    <a href="{{ route('delete-course', $course->id) }}" class="btn btn-sm btn-danger">Delete</a>
                                                 </td>
                                             </tr>
                                     </tbody>

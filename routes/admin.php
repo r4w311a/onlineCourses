@@ -40,6 +40,8 @@ Route::group(['prefix'  =>  'admin'], function () {
         Route::post('/store', [CourseController::class, 'store'])->name('store-course');
         Route::get('/edit/{id}', [CourseController::class, 'editCourse'])->name('edit-course');
         Route::post('/update', [CourseController::class, 'updateCourse'])->name('update-course');
+        Route::get('/deleteCourse/{id}', [CourseController::class, 'deleteCourse'])->name('delete-course');
+
     });
 
     Route::prefix('lessons/')->group(function () {
