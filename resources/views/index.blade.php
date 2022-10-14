@@ -56,7 +56,7 @@
                                     data-setup='{ "playbackRates": [0.5, 1, 1.5, 2] }' controls preload="auto"
                                     width="300" height="264" poster="{{ asset('user/imgs/ch9p1.png') }}">
                                     <source
-                                        src="{{ Storage::disk('s3')->url('lessons/' . $item['Lesson']['lesson_link']) }}"
+                                        src="{{ asset('uploads/' . $item['Lesson']['lesson_link']) }}"
                                         type="video/mp4" />
                                 </video>
                                 <a href="#" class="btn btn-primary mt-3">Go somewhere</a>

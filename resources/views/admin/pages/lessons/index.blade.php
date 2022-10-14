@@ -17,9 +17,15 @@
                             <video id="my-video" class="video-js vjs-theme-city" oncontextmenu="return false;" data-setup='{ "playbackRates": [0.5, 1, 1.5, 2] }' controls preload="auto" width="320"
                                 height="240" poster="MY_VIDEO_POSTER.jpg" >
                                 <source
-                                    src="{{ Storage::disk('s3')->url('lessons/' . $lesson->lesson_link) }}"
+                                    src="{{ asset('uploads/' .  $lesson->lesson_link) }}"
                                     type="video/mp4" />
                             </video>
+                            {{-- <video id="my-video" class="video-js vjs-theme-city" oncontextmenu="return false;" data-setup='{ "playbackRates": [0.5, 1, 1.5, 2] }' controls preload="auto" width="320"
+                                height="240" poster="MY_VIDEO_POSTER.jpg" >
+                                <source
+                                    src="{{ Storage::disk('s3')->url('lessons/' . $lesson->lesson_link) }}"
+                                    type="video/mp4" />
+                            </video> --}}
                         <a href="#" class="btn btn-primary mt-3">Go somewhere</a>
                     </div>
                 </div>

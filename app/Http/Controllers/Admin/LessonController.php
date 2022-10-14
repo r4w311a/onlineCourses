@@ -27,7 +27,7 @@ class LessonController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'lesson_link' => 'required|mimes:mpeg,ogg,mp4,webm,3gp,mov,flv,avi,wmv,ts|max:100040',
+            'lesson_link' => 'required|mimes:jpg,mpeg,ogg,mp4,webm,3gp,mov,flv,avi,wmv,ts|max:100040',
             'course_id' => 'required',
             'chapter_num' => 'required|numeric',
         ]);
@@ -36,7 +36,8 @@ class LessonController extends Controller
         if ($request->hasFile('lesson_link')) {
             $lesson_link = $request->file('lesson_link');
             $LessonName = time() . '.' . $request->lesson_link->extension();
-            $lesson_link->storeAs('lessons/', $LessonName, 's3');
+            /* $lesson_link->storeAs('lessons/', $LessonName, 's3'); */
+            $lesson_link->move(public_path('/uploads'), $LessonName);
         }
 
         Lesson::insert([
