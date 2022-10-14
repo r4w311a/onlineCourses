@@ -27,7 +27,7 @@ class LessonController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'lesson_link' => 'required|mimes:jpg,mpeg,ogg,mp4,webm,3gp,mov,flv,avi,wmv,ts|max:100040',
+            'lesson_link' => 'required|mimes:mpeg,ogg,mp4,webm,3gp,mov,flv,avi,wmv,ts|max:100040',
             'course_id' => 'required',
             'chapter_num' => 'required|numeric',
         ]);
