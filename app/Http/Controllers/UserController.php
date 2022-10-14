@@ -8,6 +8,7 @@ use App\Models\Course;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Lesson;
+use App\Models\Session;
 use Illuminate\Support\Carbon;
 
 class UserController extends Controller
@@ -88,8 +89,13 @@ class UserController extends Controller
     }
     public function revoke($id){
         $user = User::find($id);
-        $user->user_agent = null;
+        $user->user_agent = NULL;
         $user->save();
+        $sessions = Session::where('user_id', $id)->get();
+        foreach ($sessions as $session) {
+            $session->delete();
+        }
+        
         return redirect()->route('view-users');
     }
 }
