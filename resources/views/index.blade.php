@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Share3</title>
+    <title>PHARMA COLLEAGUE | Dashboard</title>
 
 
     <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
@@ -25,7 +25,7 @@
 <body oncontextmenu="return false">
     <header>
         <nav class="navbar navbar-dark bg-dark justify-content-between">
-            <a class="navbar-brand">Share3</a>
+            <a class="navbar-brand">PHARMA COLLEAGUE</a>
             <form class="form-inline" method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button>

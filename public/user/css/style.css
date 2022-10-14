@@ -1,236 +1,255 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo&display=swap");
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
-body{
-  color:rgb(0, 0, 0);
+body {
+    color: white;
+    font-family: "Poppins", sans-serif;
 }
-section{
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  background-size: cover;
-  background-position: center;
-}
-
-header{
-  position: relative;
-  top: 0;
-  width: 100%;
-  padding: 30px 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
-label{
-  display: none;
+header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header .logo{
-  position: relative;
-  color: #FFF;
-  font-size: 30px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 800;
-  letter-spacing: 1px;
+label {
+    display: none;
 }
 
-header .navigation a{
-
-  color: #fff;
-  background: #226A80;
-
-  font-size: 18px;
-  text-decoration: none;
-  font-weight: 500;
-  letter-spacing: 1px;
-  padding: 2px 15px;
-  border-radius: 20px;
-  transition: 0.3s;
-  transition-property: background;
+header .logo {
+    position: relative;
+    color: #fff;
+    font-size: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px #000000;
 }
 
-header .navigation a:not(:last-child){
-  margin-right: 30px;
+header .navigation a {
+    color: #fff;
+    background: #226a80;
+
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    transition: 0.3s;
+    transition-property: background;
+    font-family: "Cairo", sans-serif;
+    text-shadow: 1px 1px #000000;
 }
 
-header .navigation a:hover{
-  background: #0C4F60;
+header .navigation a:not(:last-child) {
+    margin-right: 15px;
 }
 
-.content{
-  max-width: 650px;
-  margin: 60px 35%;
+header .navigation a:hover {
+    background: #0c4f60;
+}
+
+.content {
+    max-width: 650px;
+    margin: 60px 35%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.content .info h2 {
+    color: #ffffff;
+    font-size: 55px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 60px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-shadow: 2px 2px #000000;
 
 }
 
-.content .info h2{
-  color: #ffffff;
-  font-size: 55px;
-  text-transform: uppercase;
-  font-weight: 800;
-  letter-spacing: 2px;
-  line-height: 60px;
-  margin-bottom: 30px;
+.content .info h2 span {
+    color: #fff;
+    font-size: 50px;
+    font-weight: 600;
 }
 
-.content .info h2 span{
-  color: #fff;
-  font-size: 50px;
-  font-weight: 600;
+.content .info p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 50px;
+    text-shadow: 1px 1px #000000;
 }
 
-.content .info p{
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 40px;
+.content .info-btn {
+    color: #fff;
+    background: #226a80;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.3s;
+    transition-property: background;
+    text-shadow: 1px 1px #000000;
 }
 
-.content .info-btn{
-  color: #fff;
-  background: #226A80;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 2px;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: 0.3s;
-  transition-property: background;
+.content .info-btn:hover {
+    background: #0c4f60;
 }
 
-.content .info-btn:hover{
-  background: #0C4F60;
+.media-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-shadow: 1px 1px #000000;
 }
 
-.media-icons{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
+.media-icons a {
+    position: relative;
+    color: #fff;
+    font-size: 25px;
+    transition: 0.3s;
+    transition-property: transform;
 }
 
-.media-icons a{
-  position: relative;
-  color: #fff;
-  font-size: 25px;
-  transition: 0.3s;
-  transition-property: transform;
+.media-icons a:not(:last-child) {
+    margin-right: 60px;
 }
 
-.media-icons a:not(:last-child){
-  margin-right: 60px;
+.media-icons a:hover {
+    transform: scale(1.5);
 }
 
-.media-icons a:hover{
-  transform: scale(1.5);
-}
-
-#check{
-  z-index: 3;
-  display: none;
+#check {
+    z-index: 3;
+    display: none;
 }
 
 /* Responsive CSS */
 
-@media (max-width: 960px){
-  header .navigation{
-    display: none;
-  }
+@media (max-width: 960px) {
+    header .navigation {
+        display: none;
+    }
 
-  label{
-    display: block;
-    font-size: 25px;
-    cursor: pointer;
-    transition: 0.3s;
-    transition-property: color;
-  }
+    label {
+        display: block;
+        font-size: 25px;
+        cursor: pointer;
+        transition: 0.3s;
+        transition-property: color;
+    }
 
-  label:hover{
-    color: #fff;
-  }
+    label:hover {
+        color: #fff;
+    }
 
-  label .close-btn{
-    display: none;
-  }
+    label .close-btn {
+        display: none;
+    }
 
-  #check:checked ~ header .navigation{
-    z-index: 2;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(114, 223, 255, 0.9);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+    #check:checked ~ header .navigation {
+        z-index: 2;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(114, 223, 255, 0.9);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
-  #check:checked ~  header .navigation a{
-    font-weight: 700;
-    margin-right: 0;
-    margin-bottom: 50px;
-    letter-spacing: 2px;
-  }
+    #check:checked ~ header .navigation a {
+        font-weight: 700;
+        margin-right: 0;
+        margin-bottom: 50px;
+        letter-spacing: 2px;
+    }
 
-  #check:checked ~ header label .close-btn{
-    z-index: 2;
-    position: fixed;
-    display: block;
-  }
+    #check:checked ~ header label .close-btn {
+        z-index: 2;
+        position: fixed;
+        display: block;
+    }
 
-  #check:checked ~ header label .menu-btn{
-    display: none;
-  }
+    #check:checked ~ header label .menu-btn {
+        display: none;
+    }
 
-  label .menu-btn{
-    position: absolute;
-  }
+    label .menu-btn {
+        position: absolute;
+        color: white;
+    }
 
-  header .logo{
-    position: absolute;
-    bottom: -6px;
-  }
+    header .logo {
+        position: absolute;
+        left: 25px;
+        font-size: 20px;
+    }
 
-  .content .info h2{
-    font-size: 45px;
-    line-height: 50px;
-  }
+    .content .info h2 {
+        font-size: 45px;
+        line-height: 50px;
+    }
 
-  .content .info h2 span{
-    font-size: 40px;
-    font-weight: 600;
-  }
+    .content .info h2 span {
+        font-size: 40px;
+        font-weight: 600;
+    }
 
-  .content .info p{
-    font-size: 14px;
-  }
+    .content .info p {
+        font-size: 14px;
+    }
 }
 
-@media (max-width: 560px){
-  .content .info h2{
-    font-size: 35px;
-    line-height: 40px;
-  }
+@media (max-width: 560px) {
+    .content .info h2 {
+        font-size: 35px;
+        line-height: 40px;
+    }
 
-  .content .info h2 span{
-    font-size: 30px;
-    font-weight: 600;
-  }
+    .content .info h2 span {
+        font-size: 30px;
+        font-weight: 600;
+    }
 
-  .content .info p{
-    font-size: 14px;
-  }
+    .content .info p {
+        font-size: 14px;
+    }
+    section {
+        background-size: 100% 100%;
+    }
+    .content {
+        max-width: 650px;
+        margin: 38% 10%;
+    }
 }
