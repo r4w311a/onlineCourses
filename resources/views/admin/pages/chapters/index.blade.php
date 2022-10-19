@@ -12,7 +12,7 @@
         <div class="col-md-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <p class="card-title">Courses List</p>
+                    <p class="card-title">Chapter List</p>
                     <div class="row">
                         <div class="col-12">
                             <div class="table-responsive">
@@ -23,6 +23,7 @@
                                             <th>Course Name</th>
                                             <th>Chapter No.</th>
                                             <th>Created at</th>
+                                            <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -33,11 +34,10 @@
                                                 <td class="align-middle">{{ $chapter->Course->course_name }}</td>
                                                 <td class="align-middle">{{ $chapter->chapter_num }}</td>
                                                 <td class="align-middle">{{ $chapter->created_at->diffForHumans() }}</td>
-                                               {{--  <td class="align-middle">
-                                                    <a href="{{ route('edit-course', $chapter->id) }}"
-                                                        class="btn btn-sm btn-info">Edit</a>
-                                                    <a href="{{ route('delete-course', $chapter->id) }}" class="btn btn-sm btn-danger">Delete</a>
-                                                </td> --}}
+                                                <td class="align-middle">
+                                                    <a href="{{ route('delete-chapter', $chapter->id) }}" class="btn btn-sm btn-danger">Delete</a>
+                                                </td>
+
                                             </tr>
                                     </tbody>
                                     @endforeach

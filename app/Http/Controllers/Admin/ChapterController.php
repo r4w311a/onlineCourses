@@ -35,4 +35,9 @@ class ChapterController extends Controller
         ]);
         return Redirect('/admin/chapters/')->with('success', 'Chapter added successfully');
     }
+    public function deleteChapter($id)
+    {
+        Chapter::find($id)->delete();
+        return Redirect('/admin/chapters/')->with('success', 'Chapter deleted successfully');
+    }
 }

@@ -47,6 +47,8 @@ Route::group(['prefix'  =>  'admin'], function () {
             Route::get('/', [ChapterController::class, 'index'])->name('view-chapters');
             Route::get('/addChapter', [ChapterController::class, 'addChapter'])->name('add-chapter');
             Route::post('/storeChapter', [ChapterController::class, 'store'])->name('store-chapter');
+            Route::get('/deleteChapter/{id}', [ChapterController::class, 'deleteChapter'])->name('delete-chapter');
+
         });
 
         Route::prefix('lessons/')->group(function () {

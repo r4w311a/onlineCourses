@@ -36,14 +36,7 @@ label {
 }
 
 header .logo {
-    position: relative;
-    color: #fff;
-    font-size: 30px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px #000000;
+    max-height: 45px;
 }
 
 header .navigation a {

@@ -7,6 +7,8 @@
     <title>Pharma Colleague | Home</title>
     <link rel="stylesheet" href="{{ asset('user/css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="{{ asset('user/imgs/logo.ico') }}">
+
     <style>
         section {
             background: url({{ asset('user/imgs/untitled.jpg') }}) no-repeat;
@@ -34,7 +36,8 @@
         <input type="checkbox" id="check">
         <header>
             </div>
-            <h2><a href="/" class="logo">Pharma Colleague</a></h2>
+            <h2><a href="{{ route('admin-dashboard') }}"><img
+                src="{{ asset('user/imgs/cropped-white.png') }}" class="logo" alt="logo" /></a></h2>
             <div class="navigation">
                 <a href="https://drive.google.com/drive/folders/1g5PFWqD_EZgBoasla3CaFu5cC15OfU-m" target="_blank">تفاريغ المواد</a>
                 @if (Route::has('login'))

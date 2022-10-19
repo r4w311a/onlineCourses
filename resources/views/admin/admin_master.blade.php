@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Admin Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('user/imgs/logo.ico') }}">
     <!-- plugins:css -->
 
     <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
@@ -80,6 +81,8 @@
 
     <!-- End plugin js for this page -->
     <!-- inject:js -->
+
+    <script src="{{ asset('admin/js/off-canvas.js') }}"></script>
     <script src="{{ asset('admin/js/hoverable-collapse.js') }}"></script>
     <script src="{{ asset('admin/js/template.js') }}"></script>
     <script src="{{ asset('admin/js/settings.js') }}"></script>
