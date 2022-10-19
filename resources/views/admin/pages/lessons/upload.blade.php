@@ -13,26 +13,35 @@
                 <div class="form-group">
 
 
-                   
-                        <label for="lesson_link">File upload</label>
-                        <input id="lesson_link" type="file" name="lesson_link" class="file-upload-default">
-                        <div class="input-group col-xs-12">
-                          <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Lesson">
-                          <span class="input-group-append">
+
+                    <label for="lesson_link">File upload</label>
+                    <input id="lesson_link" type="file" name="lesson_link" class="file-upload-default">
+                    <div class="input-group col-xs-12">
+                        <input type="text" class="form-control file-upload-info" disabled=""
+                            placeholder="Upload Lesson">
+                        <span class="input-group-append">
                             <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                          </span>
-                        </div>
-                        @error('lesson_link')
+                        </span>
+                    </div>
+                    @error('lesson_link')
                         <span class="text-danger">{{ $message }}</span>
-                        @enderror
-                        
-                        <br>
-                  
-                    
-                    <label class="mt-3" for="chapter_num">Chapter Number </label>
-                    <input type="number" class="form-control" name="chapter_num" id="chapter_num" required
-                        placeholder="chapter number">
-                    @error('chapter_num')
+                    @enderror
+
+                    <br>
+
+
+                
+
+                    <label class="mt-3" for="chapter_id">Chapter Number</label>
+                    <select required id="chapter_id" name="chapter_id" class="form-control"
+                        aria-label=".form-select-lg example">
+                        <option selected disabled>Choose Chapter</option>
+                        @foreach ($chapters as $chapter)
+                            <option value="{{ $chapter->id }}">
+                                {{ $chapter->chapter_num }}</option>
+                        @endforeach
+                    </select>
+                    @error('chapter_id')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
 

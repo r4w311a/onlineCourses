@@ -13,4 +13,7 @@ class Lesson extends Model
     public function Course(){
         return $this->belongsTo(Course::class,'course_id','id');
     }
+    public function Chapter(){
+        return $this->belongsTo(Chapter::class,'chapter_id','id');
+    }
 }

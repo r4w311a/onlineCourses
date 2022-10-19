@@ -11,4 +11,10 @@ class OrderItem extends Model
     public function Lesson(){
         return $this->belongsTo(Lesson::class,'lesson_id','id');
     }
+    public function Chapter(){
+        return $this->belongsTo(Chapter::class,'chapter_id','id');
+    }
+    public function Order(){
+        return $this->belongsTo(Order::class,'order_id','id');
+    }
 }

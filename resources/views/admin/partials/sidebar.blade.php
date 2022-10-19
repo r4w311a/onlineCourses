@@ -19,6 +19,20 @@
                 </ul>
             </div>
         </li>
+        <li class="nav-item {{ request()->is('admin/chapters') ? 'active' : '' }}">
+            <a class="nav-link" data-toggle="collapse" href="#chapters" aria-expanded="false" aria-controls="ui-basic2">
+                <i class="ti-user menu-icon"></i>
+                <span class="menu-title">Chapters</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="chapters">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('view-chapters') }}">View Chapters</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('add-chapter') }}">Add New Chapter</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
         <li class="nav-item {{ request()->is('admin/lessons') ? 'active' : '' }}">
             <a class="nav-link" data-toggle="collapse" href="#lessons" aria-expanded="false" aria-controls="ui-basic2">
                 <i class="ti-video-clapper menu-icon"></i>
@@ -47,5 +61,6 @@
                 </ul>
             </div>
         </li>
+        
     </ul>
 </nav>

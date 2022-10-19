@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Lesson;
 use App\Models\Course;
 use App\Models\Order;
+use App\Models\Chapter;
 use App\Models\OrderItem;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
@@ -20,16 +21,17 @@ class LessonController extends Controller
     }
     public function uploadLesson()
     {
+        $chapters = Chapter::all();
         $courses = Course::orderBy('course_name', 'ASC')->get();
-        return view('admin.pages.lessons.upload', compact('courses'));
+        return view('admin.pages.lessons.upload', compact('courses', 'chapters'));
     }
 
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'lesson_link' => 'required|mimes:mpeg,ogg,mp4,webm,3gp,mov,flv,avi,wmv,ts|max:100040',
+            'lesson_link' => 'required|mimes:png,jpg,mpeg,ogg,mp4,webm,3gp,mov,flv,avi,wmv,ts|max:100040',
             'course_id' => 'required',
-            'chapter_num' => 'required|numeric',
+            'chapter_id' => 'required|numeric',
         ]);
 
         
@@ -43,7 +45,7 @@ class LessonController extends Controller
         Lesson::insert([
             'lesson_link' => $LessonName,
             'course_id' => $request->course_id,
-            'chapter_num' => $request->chapter_num,
+            'chapter_id' => $request->chapter_id,
             'lesson_slug' => $request->course_id . mt_rand(1000000, 9999999),
             'created_at' => Carbon::now(),
         ]);
@@ -51,10 +53,11 @@ class LessonController extends Controller
         $orders = Order::where('course_id', $request->course_id)->get();
         $lesson = Lesson::all()->last();
         foreach ($orders as $order) {
-            $id = $order->user_id;
-
+            $order_id = $order->id;
+            $user_id = $order->user_id;
             OrderItem::insert([
-                'user_id' => $id,
+                'user_id' => $user_id,
+                'order_id' => $order_id,
                 'lesson_id' => $lesson->id,
                 'created_at' => Carbon::now(),
             ]);

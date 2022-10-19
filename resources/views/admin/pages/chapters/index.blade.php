@@ -1,5 +1,7 @@
 @extends('admin.admin_master')
 @section('main')
+   
+
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -10,7 +12,7 @@
         <div class="col-md-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <p class="card-title">Orders List</p>
+                    <p class="card-title">Courses List</p>
                     <div class="row">
                         <div class="col-12">
                             <div class="table-responsive">
@@ -18,25 +20,27 @@
                                     <thead>
                                         <tr>
                                             <th>#ID</th>
-                                            <th>User Name</th>
                                             <th>Course Name</th>
+                                            <th>Chapter No.</th>
                                             <th>Created at</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @php $i = 1 @endphp
-                                        @foreach ($orders as $order)
+                                        @foreach ($chapters as $chapter)
                                             <tr class="text-center align-middle">
-                                                <td class="align-middle">{{ $i++ }}</td>
-                                                <td class="align-middle">{{ $order->User->name }}</td>
-                                                <td class="align-middle">{{ $order->Course->course_name }}</td>
-                                                <td class="align-middle">{{ $order->created_at }}</td>
+                                                <td class="align-middle">{{$i++}}</td>
+                                                <td class="align-middle">{{ $chapter->Course->course_name }}</td>
+                                                <td class="align-middle">{{ $chapter->chapter_num }}</td>
+                                                <td class="align-middle">{{ $chapter->created_at->diffForHumans() }}</td>
+                                               {{--  <td class="align-middle">
+                                                    <a href="{{ route('edit-course', $chapter->id) }}"
+                                                        class="btn btn-sm btn-info">Edit</a>
+                                                    <a href="{{ route('delete-course', $chapter->id) }}" class="btn btn-sm btn-danger">Delete</a>
+                                                </td> --}}
                                             </tr>
-                                            
-                                        @endforeach
-                                          
                                     </tbody>
-                                    
+                                    @endforeach
                                 </table>
                             </div>
                         </div>

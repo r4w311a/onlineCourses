@@ -45,11 +45,12 @@ class UserController extends Controller
         $order->course_id = $request->course_id;
         $order->save();
 
-
+        $order_id = Order::all()->last()->id;
         $lessons = Lesson::where('course_id', $request->course_id)->get();
         foreach ($lessons as $lesson) {
             OrderItem::insert([
                 'user_id' => $user->id,
+                'order_id' => $order_id,
                 'lesson_id' => $lesson->id,
                 'created_at' => Carbon::now(),
             ]);

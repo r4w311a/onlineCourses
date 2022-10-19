@@ -36,35 +36,38 @@
         <div class="row">
             <div class="col-12 mt-5">
                 <h3 class="text-center">Welcome {{ Auth::user()->name }}..</h1>
-                    <h5 class="mt-2 text-center">You have <strong><span class="text-danger">
-                            @foreach ($chapters as $chapter)
-                                {{ $chapter->Course->course_name }}
-                                @php break; @endphp
-                            @endforeach
-                        </span> </strong> course available to watch!</h5>
+                    <a class="btn btn-primary mt-3" href="{{ route('dashboard') }}">All Lessons</a>
             </div>
         </div>
-
+        @if ($lessons->count() > 0)
+        @php $i = 1; @endphp
         <div class="row">
-            @foreach ($chapters as $chapter)
+            @foreach ($lessons as $lesson)
                 <div class="col-sm-4 mt-5">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Chapter {{ $chapter->chapter_num }}
+                            <h5 class="card-title"> {{ $lesson->Course->course_name }} | Chapter
+                                {{ $lesson->Chapter->chapter_num }} @if ($lessons->count() > 1)
+                                    | Part {{ $i++ }}
+                                @endif
                             </h5>
                             <p class="card-text">
-                                {{-- <video id="my-video" class="video-js vjs-theme-city" oncontextmenu="return false;"
+                                <video id="my-video" class="video-js vjs-theme-city" oncontextmenu="return false;"
                                     data-setup='{ "playbackRates": [0.5, 1, 1.5, 2] }' controls preload="auto"
                                     width="300" height="264" poster="{{ asset('user/imgs/ch9p1.png') }}">
-                                    <source
-                                        src="{{ asset('uploads/' . $item['Lesson']['lesson_link']) }}"
-                                        type="video/mp4" />
-                                </video> --}}
-                                <a href="{{ route('watch-lessons', $chapter->id) }}" class="btn btn-primary mt-3">Watch Lessons</a>
+                                    <source src="{{ asset('uploads/' . $lesson->lesson_link) }}" type="video/mp4" />
+                                </video>
                         </div>
                     </div>
                 </div>
             @endforeach
+        @else
+            <div class="row">
+                <div class="col-12 mt-5">
+                    <h3 class="text-center">No Lessons Available</h1>
+                </div>
+            </div>
+        @endif
 
         </div>
         <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
