@@ -12,13 +12,15 @@ class ChapterController extends Controller
 {
     public function index()
     {
-        $chapters = Chapter::all();
+        // retrieve all chapters from database in ascending order by chapter_num 
+        $chapters = Chapter::orderBy('chapter_num', 'asc')->get();
+        /* $chapters = Chapter::all(); */
         return view('admin.pages.chapters.index', compact('chapters'));
     }
 
     public function addChapter()
     {
-        $courses = Course::all();
+        $courses = Course::orderBy('course_name', 'ASC')->get();
         return view('admin.pages.chapters.add', compact('courses'));
     }
     public function store(Request $request)

@@ -38,7 +38,7 @@ Route::middleware([
         $user_id = Auth::id();
         $course_id = Order::where('user_id', $user_id)->pluck('course_id');
         /* $chapter_id = OrderItem::where('order_id', $course_id)->pluck('chapter_id'); */
-        $chapters = Chapter::whereIn('course_id', $course_id)->get();
+        $chapters = Chapter::whereIn('course_id', $course_id)->orderBy('chapter_num', 'asc')->get();
 
         /* $orderitems = OrderItem::where('user_id', $user_id)->get();
             $ordersInfo = Order::where('user_id', $user_id)->limit(1)->get(); */
