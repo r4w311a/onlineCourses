@@ -21,7 +21,7 @@
         </li>
         <li class="nav-item {{ request()->is('admin/chapters') ? 'active' : '' }}">
             <a class="nav-link" data-toggle="collapse" href="#chapters" aria-expanded="false" aria-controls="ui-basic2">
-                <i class="ti-user menu-icon"></i>
+                <i class="ti-notepad menu-icon"></i>
                 <span class="menu-title">Chapters</span>
                 <i class="menu-arrow"></i>
             </a>
